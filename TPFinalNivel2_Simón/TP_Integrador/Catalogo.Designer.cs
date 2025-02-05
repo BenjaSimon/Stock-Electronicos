@@ -36,9 +36,10 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnbusquedaAvanzada = new System.Windows.Forms.Button();
-            this.ptbImagenaArticulo = new System.Windows.Forms.PictureBox();
+            this.ptbImagenArticulo = new System.Windows.Forms.PictureBox();
+            this.btnDetalles = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbImagenaArticulo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImagenArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvListado
@@ -48,27 +49,30 @@
             this.dgvListado.Name = "dgvListado";
             this.dgvListado.Size = new System.Drawing.Size(631, 315);
             this.dgvListado.TabIndex = 0;
+            this.dgvListado.SelectionChanged += new System.EventHandler(this.dgvListado_SelectionChanged);
             // 
             // lblBuscar
             // 
             this.lblBuscar.AutoSize = true;
-            this.lblBuscar.Location = new System.Drawing.Point(8, 56);
+            this.lblBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscar.Location = new System.Drawing.Point(126, 53);
             this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(43, 13);
+            this.lblBuscar.Size = new System.Drawing.Size(63, 20);
             this.lblBuscar.TabIndex = 1;
             this.lblBuscar.Text = "Buscar:";
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(57, 51);
+            this.txtBuscar.Location = new System.Drawing.Point(195, 53);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(100, 20);
             this.txtBuscar.TabIndex = 2;
+            this.txtBuscar.Text = "Nombre";
             // 
             // btnBuscar
             // 
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuscar.Location = new System.Drawing.Point(164, 51);
+            this.btnBuscar.Location = new System.Drawing.Point(321, 53);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(89, 20);
             this.btnBuscar.TabIndex = 3;
@@ -80,21 +84,20 @@
             // 
             this.btnAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAñadir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAñadir.Location = new System.Drawing.Point(12, 413);
+            this.btnAñadir.Location = new System.Drawing.Point(46, 422);
             this.btnAñadir.Name = "btnAñadir";
-            this.btnAñadir.Size = new System.Drawing.Size(89, 28);
+            this.btnAñadir.Size = new System.Drawing.Size(106, 38);
             this.btnAñadir.TabIndex = 4;
             this.btnAñadir.Text = "Añadir Artículo";
-            this.btnAñadir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAñadir.UseVisualStyleBackColor = true;
             this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
             // btnModificar
             // 
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnModificar.Location = new System.Drawing.Point(125, 413);
+            this.btnModificar.Location = new System.Drawing.Point(200, 422);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(89, 28);
+            this.btnModificar.Size = new System.Drawing.Size(106, 38);
             this.btnModificar.TabIndex = 5;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -102,9 +105,9 @@
             // btnEliminar
             // 
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEliminar.Location = new System.Drawing.Point(234, 413);
+            this.btnEliminar.Location = new System.Drawing.Point(354, 422);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(78, 28);
+            this.btnEliminar.Size = new System.Drawing.Size(95, 38);
             this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -114,33 +117,44 @@
             this.btnbusquedaAvanzada.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnbusquedaAvanzada.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnbusquedaAvanzada.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.btnbusquedaAvanzada.Location = new System.Drawing.Point(303, 48);
+            this.btnbusquedaAvanzada.Location = new System.Drawing.Point(445, 53);
             this.btnbusquedaAvanzada.Name = "btnbusquedaAvanzada";
             this.btnbusquedaAvanzada.Size = new System.Drawing.Size(147, 23);
             this.btnbusquedaAvanzada.TabIndex = 7;
             this.btnbusquedaAvanzada.Text = "Búsqueda avanzada";
             this.btnbusquedaAvanzada.UseVisualStyleBackColor = false;
             // 
-            // ptbImagenaArticulo
+            // ptbImagenArticulo
             // 
-            this.ptbImagenaArticulo.Location = new System.Drawing.Point(663, 125);
-            this.ptbImagenaArticulo.Name = "ptbImagenaArticulo";
-            this.ptbImagenaArticulo.Size = new System.Drawing.Size(255, 211);
-            this.ptbImagenaArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.ptbImagenaArticulo.TabIndex = 8;
-            this.ptbImagenaArticulo.TabStop = false;
+            this.ptbImagenArticulo.Location = new System.Drawing.Point(649, 82);
+            this.ptbImagenArticulo.Name = "ptbImagenArticulo";
+            this.ptbImagenArticulo.Size = new System.Drawing.Size(307, 315);
+            this.ptbImagenArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbImagenArticulo.TabIndex = 8;
+            this.ptbImagenArticulo.TabStop = false;
+            // 
+            // btnDetalles
+            // 
+            this.btnDetalles.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDetalles.Location = new System.Drawing.Point(497, 422);
+            this.btnDetalles.Name = "btnDetalles";
+            this.btnDetalles.Size = new System.Drawing.Size(95, 38);
+            this.btnDetalles.TabIndex = 9;
+            this.btnDetalles.Text = "Ver Detalles";
+            this.btnDetalles.UseVisualStyleBackColor = true;
             // 
             // frmCat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(930, 509);
-            this.Controls.Add(this.ptbImagenaArticulo);
-            this.Controls.Add(this.btnbusquedaAvanzada);
+            this.ClientSize = new System.Drawing.Size(958, 509);
+            this.Controls.Add(this.btnDetalles);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAñadir);
+            this.Controls.Add(this.ptbImagenArticulo);
+            this.Controls.Add(this.btnbusquedaAvanzada);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.lblBuscar);
@@ -149,8 +163,9 @@
             this.Name = "frmCat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Catálogo";
+            this.Load += new System.EventHandler(this.frmCat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbImagenaArticulo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImagenArticulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,7 +181,8 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnbusquedaAvanzada;
-        private System.Windows.Forms.PictureBox ptbImagenaArticulo;
+        private System.Windows.Forms.PictureBox ptbImagenArticulo;
+        private System.Windows.Forms.Button btnDetalles;
     }
 }
 

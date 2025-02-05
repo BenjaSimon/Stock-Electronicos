@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace TP_Integrador
 {
-    public partial class frmCat : Form
+    public partial class frmDetalles : Form
     {
-        public frmCat()
+        public frmDetalles()
         {
             InitializeComponent();
-        }
-
-        private void btnAñadir_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
