@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dominio;
 
 namespace TP_Integrador
 {
@@ -15,6 +16,27 @@ namespace TP_Integrador
         public AltaArticulo()
         {
             InitializeComponent();
+            
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnAñadir_Click(object sender, EventArgs e)
+        {
+            Articulo art = new Articulo();
+
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

@@ -174,6 +174,7 @@
             this.btncancelar.TabIndex = 14;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // btnAñadir
             // 
@@ -184,6 +185,7 @@
             this.btnAñadir.TabIndex = 15;
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = true;
+            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
             // AltaArticulo
             // 

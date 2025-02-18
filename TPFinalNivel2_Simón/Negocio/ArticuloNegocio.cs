@@ -52,5 +52,12 @@ namespace Negocio
             }
         }
 
+        public void Agregar(Articulo nuevo)
+        {
+            conexionDB conexion = new conexionDB();
+            
+
+        }
+
     }
 }
