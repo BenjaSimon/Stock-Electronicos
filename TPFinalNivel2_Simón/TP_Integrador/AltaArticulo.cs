@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
+using Negocio;
 
 namespace TP_Integrador
 {
@@ -27,10 +28,19 @@ namespace TP_Integrador
         private void btnAñadir_Click(object sender, EventArgs e)
         {
             Articulo art = new Articulo();
+            ArticuloNegocio Negocio = new ArticuloNegocio();
+            conexionDB conexion = new conexionDB();
 
             try
             {
+                conexion.SetearConsulta("insert into ARTICULO");
+                art.Codigo = txtCodigoA.Text;
+                art.Nombre = txtNombreA.Text;
+                art.Descripcion = txtDescripcionA.Text;
 
+                Negocio.Agregar(art);
+                MessageBox.Show("Agregado correctamente");
+                Close();
             }
             catch (Exception ex)
             {

@@ -17,7 +17,7 @@ namespace Negocio
             try
             {
                 conexion.SetearConsulta("Select Id, Descripcion FROM MARCAS");
-                conexion.EjecutarConsulta ();
+                conexion.EjecutarConsulta();
 
                 while (conexion.Lector.Read())
                 {

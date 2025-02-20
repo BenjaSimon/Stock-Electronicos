@@ -55,7 +55,18 @@ namespace Negocio
         public void Agregar(Articulo nuevo)
         {
             conexionDB conexion = new conexionDB();
-            
+
+            try
+            {
+                conexion.SetearConsulta("insert into Articulo");
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
 
         }
 
